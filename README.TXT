@@ -17,3 +17,8 @@ This project is often used after studying the "shapes" project. It
 adds a class to those ones in "shapes". That class (named "Picture")
 uses the shapes to draw a picture. It can be used to experiment with 
 modifying source code.
+
+Q.14 I the picture class sets the colours to what you set the string as depending
+on which method you invoke.
+
+

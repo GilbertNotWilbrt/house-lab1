@@ -15,7 +15,10 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle sun2;
+    private Person human;
     private boolean drawn;
+    
 
     /**
      * Constructor for objects of class Picture
@@ -26,6 +29,8 @@ public class Picture
         window = new Square();
         roof = new Triangle();  
         sun = new Circle();
+        sun2 = new Circle();
+        human = new Person();
         drawn = false;
     }
 
@@ -40,6 +45,11 @@ public class Picture
             wall.changeSize(120);
             wall.makeVisible();
             
+            human.changeColor("black");
+            human.moveHorizontal(-180);
+            human.moveVertical(20);
+            human.makeVisible();
+            
             window.changeColor("black");
             window.moveHorizontal(-120);
             window.moveVertical(40);
@@ -51,15 +61,27 @@ public class Picture
             roof.moveVertical(-60);
             roof.makeVisible();
     
-            sun.changeColor("yellow");
+            sun.changeColor("blue");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
             drawn = true;
+            
+            sun2.changeColor("yellow");
+            sun2.moveHorizontal(100);
+            sun2.moveVertical(0);
+            sun2.changeSize(80);
+            sun2.makeVisible();
         }
     }
 
+    public void Sunset()
+    {
+        sun.slowMoveVertical(200);
+        human.slowMoveHorizontal(100);
+    }
+      
     /**
      * Change this picture to black/white display
      */
@@ -69,6 +91,7 @@ public class Picture
         window.changeColor("white");
         roof.changeColor("black");
         sun.changeColor("black");
+        sun2.changeColor("white");
     }
 
     /**
@@ -79,6 +102,7 @@ public class Picture
         wall.changeColor("red");
         window.changeColor("black");
         roof.changeColor("green");
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
+        sun2.changeColor("yellow");
     }
 }
